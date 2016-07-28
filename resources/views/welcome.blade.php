@@ -27,7 +27,7 @@
 
                   <p>{{ $offer->description }}</p>
                   <p>
-                    <a href="#">Get this offer</a>
+                    <a href="{{ URL::to('offer/' . $offer->id) }}">Get this offer</a>
                     <em class="pull-right"><small>{{ $offer->company->name }}</small></em>
                   </p>
                   <br>

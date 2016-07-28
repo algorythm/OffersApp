@@ -22,6 +22,11 @@ Route::get('/company/{company}', function($company) {
   dd($company->address);
 });
 
+Route::get('/offer/{offer}', function($offer) {
+  $offer = App\Offer::where('id', $offer)->firstOrFail();
+  dd($offer);
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
