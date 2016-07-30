@@ -19,20 +19,16 @@
               <br>
             </div>-->
 
-            @foreach($offers as $offer)
-                <div class="col-md-6">
-                  <?php $address = $offer->address->street . ' ' . $offer->address->number . ', ' . $offer->address->zip_code . ' ' . $offer->address->city ?>
-                  <h4>{{ $offer->name }} <em class="pull-right"><small>{{ $address }}</small></em></h4>
-                  <img src="/images/{{ $offer->image }}" alt="Placeholder Image" class="center-block"><br> <!-- skal laves om til url link (laravel)-->
+            <div class="container">
+              <div class="row">
+                @foreach($offers as $offer)
+                  <div class="col-md-4 col-sm-6">
+                    @include('offers.partials.item')
+                  </div>
+                @endforeach
+              </div>
+            </div>
 
-                  <p>{{ $offer->description }}</p>
-                  <p>
-                    <a href="{{ URL::to('offer/' . $offer->id) }}">Get this offer</a>
-                    <em class="pull-right"><small>{{ $offer->company->name }}</small></em>
-                  </p>
-                  <br>
-                </div>
-            @endforeach
         </div>
     </div>
 </div>
