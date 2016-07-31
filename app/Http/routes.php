@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    $offers = App\Offer::all();
-    return view('welcome')->with('offers', $offers);
-});
+Route::get('/', 'OfferController@index');
 
 Route::get('/company/{company}', function($company) {
   $company = App\Company::where('name', $company)->firstOrFail();
@@ -22,10 +19,13 @@ Route::get('/company/{company}', function($company) {
   dd($company->address);
 });
 
-Route::get('/offer/{offer}', function($offer) {
+/*Route::get('/offer/{offer}', function($offer) {
   $offer = App\Offer::where('id', $offer)->firstOrFail();
-  dd($offer);
-});
+  return controller('OfferController@index');
+  //return view('offers.offer');
+});*/
+
+Route::get('/offer/{offer}', 'OfferController@get');
 
 Route::auth();
 
