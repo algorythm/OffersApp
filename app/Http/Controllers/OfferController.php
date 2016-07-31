@@ -23,4 +23,20 @@ class OfferController extends Controller
         $offer = \App\Offer::where('id', $offer_id)->firstOrFail();
         return view('offers.offer')->with('offer', $offer);
     }
+
+    public function getBuy(Request $request)
+    {
+      $offer = \App\Offer::where('id', $request->offer_id)->firstOrFail();
+      return view('offers.buy')->with('offer', $offer);
+    }
+
+    public function processPurchase(Request $request)
+    {
+      $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+        'email' => 'required|email|max:255',
+        'offer_id' => 'required|numeric',
+      ]);
+      dd($request);
+    }
 }

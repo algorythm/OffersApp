@@ -19,6 +19,10 @@ Route::get('/company/{company}', function($company) {
   dd($company->address);
 });
 
+Route::get('buy', function() {
+  return Redirect::to('/');
+});
+
 /*Route::get('/offer/{offer}', function($offer) {
   $offer = App\Offer::where('id', $offer)->firstOrFail();
   return controller('OfferController@index');
@@ -26,6 +30,12 @@ Route::get('/company/{company}', function($company) {
 });*/
 
 Route::get('/offer/{offer}', 'OfferController@getOffer');
+
+//Route::get('/buy/{offer_id}', 'OfferController@buy');
+
+Route::post('/buy', 'OfferController@getBuy');
+
+Route::post('/buy/process', 'OfferController@processPurchase');
 
 Route::get('/order', 'OrderController@index');
 

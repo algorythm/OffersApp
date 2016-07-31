@@ -22,7 +22,13 @@
       <br>
 
       @if ($offer->inStock())
-        <a href="#" class="btn btn-default btn-sm">Buy now!</a>
+        <form action="{{ URL::to('/buy') }}" method="post">
+          <input type="hidden" name="offer_id" value="{{ $offer->id }}">
+          <button type="submit" class="btn btn-default btn-sm">Buy now</button>
+
+          {{ csrf_field() }}
+        </form>
+        <!--<a href="{{-- URL::to('/buy/' . $offer->id) --}}" class="btn btn-default btn-sm">Buy now!</a>-->
       @endif
     </div>
   </div>
