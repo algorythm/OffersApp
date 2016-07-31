@@ -22,9 +22,11 @@
             <div class="container">
               <div class="row">
                 @foreach($offers as $offer)
+                  @if ($offer->inStock())
                   <div class="col-md-4 col-sm-6">
                     @include('offers.partials.item')
                   </div>
+                  @endif
                 @endforeach
               </div>
             </div>

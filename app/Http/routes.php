@@ -25,7 +25,9 @@ Route::get('/company/{company}', function($company) {
   //return view('offers.offer');
 });*/
 
-Route::get('/offer/{offer}', 'OfferController@get');
+Route::get('/offer/{offer}', 'OfferController@getOffer');
+
+Route::get('/order', 'OrderController@index');
 
 Route::auth();
 
