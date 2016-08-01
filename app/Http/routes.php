@@ -33,7 +33,7 @@ Route::get('/offer/{offer}', 'OfferController@getOffer');
 
 //Route::get('/buy/{offer_id}', 'OfferController@buy');
 
-Route::post('/buy', 'OfferController@getBuy');
+Route::get('/buy/{offer_id}', 'OfferController@getBuy');
 
 Route::post('/buy/process', 'OfferController@processPurchase');
 
@@ -42,3 +42,8 @@ Route::get('/order', 'OrderController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/braintree/token', [
+  'uses' => 'BraintreeController@token',
+  'as' => 'braintree.token',
+]);

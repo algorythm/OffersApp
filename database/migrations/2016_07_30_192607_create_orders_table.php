@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('hash');
             $table->float('total');
-            $table->integer('address_id');
+            $table->integer('address_id')->nullable();
             $table->boolean('paid');
             $table->integer('customer_id');
             $table->timestamps();

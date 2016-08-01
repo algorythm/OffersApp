@@ -38,5 +38,12 @@ return [
         'key' => env('sk_test_VWddDILmiEATZowwCuJF8sTq'),
         'secret' => env('pk_test_cmJQWMfL3RhED2RC627zsGv5'),
     ],
+    'braintree' => [
+    'model'  => App\User::class,
+    'environment' => env('sandbox'),
+    'merchant_id' => env('2w65xqt5cjv8ktz6'),
+    'public_key' => env('s7bt4q44r7r8kvzz'),
+    'private_key' => env('db8a9ab92338eaf9e73bafcd07eefc51'),
+    ],
 
 ];

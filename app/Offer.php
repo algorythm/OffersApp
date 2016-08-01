@@ -18,6 +18,10 @@ class Offer extends Model
       return $this->belongsTo('App\Address');
     }
 
+    public function orders() {
+      return $this->hasMany('App\Order');
+    }
+
     public function test() {
       return 'test';
     }
@@ -47,5 +51,10 @@ class Offer extends Model
     public function hasStock($quantity)
     {
         return $this->stock >= $quantity;
+    }
+
+    public function order()
+    {
+      return $this->belongsToMany('App\Order')->withPivot('quantity');
     }
 }
