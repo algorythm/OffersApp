@@ -38,7 +38,9 @@
           {{ csrf_field() }}
         </div>
       </div>
-      <section>
+
+      <!-- BRAINTREE Implementation -->
+      <!--<section>
          <div class="bt-drop-in-wrapper">
              <div id="bt-dropin"></div>
          </div>
@@ -49,12 +51,16 @@
                  <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
              </div>
          </label>
-     </section>
+     </section>-->
+     <!-- /BRAINTREE Implementation -->
+
     </form>
   </div>
 </div>
 @endsection
-@section('script')
+
+<!-- BRAINTREE Implementation -->
+{{--}}@section('script')
   <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
 <script>
 // We generated a client token for you so you can test out this code
@@ -66,4 +72,5 @@ braintree.setup(clientToken, "dropin", {
   container: "payment-form"
 });
 </script>
-@endsection
+@endsection--}}
+<!-- /BRAINTREE Implementation -->
