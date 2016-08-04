@@ -15,9 +15,9 @@ class SeedTable extends Migration
         DB::table('companies')->insert(array(
           array('name' => 'Companyname', 'address_id' => 1),
           array('name' => 'Connect Bar', 'address_id' => 2),
-          array('name' => 'Montana', 'address_id' => 3),
-        ))
-        ;
+          array('name' => 'Montana - København', 'address_id' => 3),
+          array('name' => 'Montana - Lyngby', 'address_id' => 4),
+        ));
 
 //-------------------------------------------------------------------------------
 
@@ -73,6 +73,12 @@ class SeedTable extends Migration
             'postal_code' => '1100',
             'country' => 'Danmark',
           ),
+          array(
+          'address1' => 'Hovedgaden 4',
+          'city' => 'Kongens Lyngby',
+          'postal_code' => '2800',
+          'country' => 'Danmark',
+        ),
         )
       );
     }

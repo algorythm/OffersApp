@@ -47,3 +47,13 @@ Route::get('/braintree/token', [
   'uses' => 'BraintreeController@token',
   'as' => 'braintree.token',
 ]);
+
+Route::get('/admin', [
+  'uses' => 'AdminController@index',
+  'as' => 'admin.index',
+  'roles' => ['admin'],
+]);
+
+Route::get('/admin/company/manage/{company_id}', [
+  'uses' => 'AdminController@manageCompany',
+]);

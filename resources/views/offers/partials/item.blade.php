@@ -6,7 +6,6 @@
     <p>{{ $offer->description }}</p>
     <p class="pull-right"><em>
         {{ $offer->company->name }}
-        Bum
       </em></p>
       <br>
   </div>

@@ -19,4 +19,8 @@ class Company extends Model
     public function offers() {
       return $this->belongsTo('App\Offer');
     }
+
+    public function users() {
+      return $this->belongsToMany('App\User')->withPivot('accepted');
+    }
 }
