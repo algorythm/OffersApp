@@ -40,10 +40,10 @@ return [
     ],
     'braintree' => [
     'model'  => App\User::class,
-    'environment' => env('sandbox'),
-    'merchant_id' => env('2w65xqt5cjv8ktz6'),
-    'public_key' => env('s7bt4q44r7r8kvzz'),
-    'private_key' => env('db8a9ab92338eaf9e73bafcd07eefc51'),
-    ],
+    'environment' => env('BRAINTREE_ENV'),
+    'merchant_id' => env('BRAINTREE_MERCHANT_ID'),
+    'public_key' => env('BRAINTREE_PUBLIC_KEY'),
+    'private_key' => env('BRAINTREE_PRIVATE_KEY'),
+],
 
 ];
