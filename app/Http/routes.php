@@ -61,3 +61,7 @@ Route::get('/admin/company/manage/{company_id}', [
 Route::get('/admin/add/offer/{company_id}', [
   'uses' => 'AdminController@addPost',
 ]);
+
+Route::post('/admin/add/offer', [
+  'uses' => 'AdminController@createPost',
+]);

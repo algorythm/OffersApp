@@ -49,6 +49,15 @@ class SeedTable extends Migration
             'image' => 'https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97500&w=800&h=500',
             'stock' => 25,
           ),
+          array(
+            'name' => 'No Stock',
+            'company_id' => 4,
+            'slug' => 'no-stock',
+            'description' => 'This offer has no stock, and shouldn\'t show up on the home page.',
+            'price' => 0.0,
+            'image' => 'https://placeholdit.imgix.net/~text?txtsize=75&txt=800%C3%97500&w=800&h=500',
+            'stock' => 0,
+          ),
         )
       );
 

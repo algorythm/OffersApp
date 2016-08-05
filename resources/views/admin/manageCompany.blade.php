@@ -22,6 +22,8 @@
           @endif
 
           [<a href="{{ URL::to('/admin/edit/offer' .'/'. $offer->id) }}">Edit</a>]
+
+          <a href="#" class="pull-right">delete</a>
         </div>
 
 

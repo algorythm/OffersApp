@@ -67,5 +67,6 @@ class User extends Authenticatable
     }
 
     public function isSuperAdmin()
-    { return (bool) $this->roles->where('name', 'superadmin')->count(); }
+    {
+      return (bool) $this->roles->where('name', 'superadmin')->count(); }
 }

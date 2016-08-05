@@ -12,6 +12,15 @@
     </ul>
 
     <h2>Companies</h2>
+    @if (Auth::user()->isSuperAdmin())
+      <p>
+        Test
+      </p>
+    @else
+      <p>
+        Nope
+      </p>
+    @endif
     @foreach (Auth::user()->companies as $company)
     <div class="list-group">
       <a href="{{ URL::to('/admin/company/manage') . '/' . $company->id }}" class="list-group-item">
