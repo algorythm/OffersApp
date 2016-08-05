@@ -16,7 +16,7 @@
     <div class="list-group">
       <a href="{{ URL::to('/admin/company/manage') . '/' . $company->id }}" class="list-group-item">
         <h4 class="list-group-item-heading">{{ $company->name }}</h4>
-        <p class="list-group-item-text">{{ $company->address->getReadbleAddress($company->address) }}</p>
+        <p class="list-group-item-text">{{ $company->address->getReadableAddress($company->address) }}</p>
       </a>
     </div>
     @endforeach

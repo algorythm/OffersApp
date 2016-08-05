@@ -21,15 +21,40 @@ class AdminController extends Controller
     public function manageCompany($company_id)
     {
       $company = \App\Company::where('id', $company_id)->firstOrFail();
-      //dd($tmp = Auth::user()->companies->get("name")->toArray);
-      //echo in_array($company->name, $tmp);
-      return view('admin.manageCompany')->with('company', $company);
-      //dd(Auth::user()->companies);
-      /*if (in_array($company, Auth::user()->companies)) {
-        return view('admin.manageCompany');
+
+      if (Auth::user()->isOwner($company)) {
+        return view('admin.manageCompany')->with('company', $company);
       } else {
         return view('admin.401');
-      }*/
-      dd($company);
+      }
+    }
+
+    public function addCompany()
+    {
+      if (Auth::user()->isSuperAdmin) {
+        // Logic here
+      } else {
+        return view('admin.401');
+      }
+    }
+
+    public function addAddress($company_id)
+    {
+      $company = \App\Company::where('id', $company_id)->firstOrFail();
+      if (Auth::user()->isOwner($company)) {
+        // Logic here...
+      } else {
+        return view('admin.401');
+      }
+    }
+
+    public function addPost($company_id)
+    {
+      $company = \App\Company::where('id', $company_id)->firstOrFail();
+      if (Auth::user()->isOwner($company)) {
+        return view('admin.addPost')->with('company', $company);
+      } else {
+
+      }
     }
 }

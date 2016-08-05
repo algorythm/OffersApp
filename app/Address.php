@@ -20,7 +20,7 @@ class Address extends Model
       return $this->belongsTo('App\Offer');
     }
 
-    public function getReadbleAddress($address)
+    public function getReadableAddress($address)
     {
       $readableAddress = $address->address1;
       if ($address->address2)

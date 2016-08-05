@@ -56,4 +56,16 @@ class User extends Authenticatable
           return false;
         }
     }
+
+    public function isOwner($company)
+    {
+      if ($this->isSuperAdmin()) {
+        return true;
+      } else {
+        return (bool) $this->companies->where('id', $company->id)->count();
+      }
+    }
+
+    public function isSuperAdmin()
+    { return (bool) $this->roles->where('name', 'superadmin')->count(); }
 }

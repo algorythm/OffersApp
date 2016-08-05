@@ -25,6 +25,7 @@
             margin-right: 6px;
         }
     </style>
+    <script>$yield('script_head')</script>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-inverse navbar-static-top">

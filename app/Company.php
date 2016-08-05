@@ -17,7 +17,7 @@ class Company extends Model
     }
 
     public function offers() {
-      return $this->belongsTo('App\Offer');
+      return $this->hasMany('App\Offer');
     }
 
     public function users() {

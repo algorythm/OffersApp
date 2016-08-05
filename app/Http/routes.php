@@ -57,3 +57,7 @@ Route::get('/admin', [
 Route::get('/admin/company/manage/{company_id}', [
   'uses' => 'AdminController@manageCompany',
 ]);
+
+Route::get('/admin/add/offer/{company_id}', [
+  'uses' => 'AdminController@addPost',
+]);
