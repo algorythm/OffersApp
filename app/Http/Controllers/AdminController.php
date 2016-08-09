@@ -34,7 +34,7 @@ class AdminController extends Controller
     public function addCompany()
     {
       if (Auth::user()->isSuperAdmin) {
-        // Logic here
+        return view('add.company'); // Logic here? Idk yet...
       } else {
         return view('admin.401');
       }

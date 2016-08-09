@@ -66,6 +66,7 @@ class SeedTable extends Migration
         DB::table('addresses')->insert(array(
           array(
             'address1' => 'Kronprinsessegade 1',
+            'address2' => '3. t.v.',
             'city' => 'København',
             'postal_code' => '1306',
             'country' => 'Danmark',
